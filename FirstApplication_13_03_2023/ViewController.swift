@@ -9,6 +9,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var colorDictionary : [String : String] = ["1" : "Yellow",
+                                        "2" : "Red",
+                                        "3" : "Green"]
     override func viewDidLoad() {
         super.viewDidLoad()
         basics()
@@ -49,7 +52,31 @@ class ViewController: UIViewController {
         var numberThree = String()
         print(numberThree)
         
+        //force unwrapping
         var num4 : Int? = 13       //Optional(13)
         print(num4! + 20)
+        
+        //nil coalesing
+        var companyName : String?
+        var company = companyName ?? "Bitcode Technologies"
+        print(company)
+        
+        //traditional if - else
+        var firstName : String?
+        //firstName = "Shraddha"
+        if(firstName != nil){
+            print(firstName!)
+        }else{
+            print("The value found is nil")
+        }
+        
+        //if let
+        var color : String?
+        //color = "Yellow"
+        if let color1 = color {
+            print(color1)
+        } else {
+            print("The value of color found is nil")
+        }
     }
 }
