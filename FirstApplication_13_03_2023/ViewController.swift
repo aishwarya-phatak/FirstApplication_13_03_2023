@@ -41,8 +41,82 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         basics()
+        basics2()
+        basics4()
+        arrays()
+        var r : Int = addition(n1: 10, n2: 10)
+        print(r)
         //checkingKey(key: "1")
        
+    }
+    
+    func basics2(){
+        for eachNumber in stride(from: 1, to: 10, by: 2){
+            print(eachNumber * 2)
+        }
+        
+        for i in stride(from: 10, through: 20, by: 3){
+            print(i + 5)
+        }
+    }
+    func arrays(){
+        var technologies : [String] = ["C","Cpp","java","iOS","Android"]
+        var numbers = [1,2,34,45,12]
+        var array1 : [Any] = ["Tushar",23.34,60]        //heterogenous array
+        
+        for eachNum in numbers{
+            print(eachNum * 10)
+        }
+        array1.forEach { i in
+            print(i)
+        }
+    }
+    
+    func basics4(){
+        enum technologies {
+            case iOS
+            case Android
+            case java
+        }
+        
+        switch(technologies.iOS){
+            case .iOS : print("iOS Selected")
+                
+            case .Android : print("Android Selected")
+           
+            case .java : print("java Selected")
+            
+            default :
+                print("Default Case")
+        }
+        
+    var laptop = (name : "Mac",price : 100000.00,year : 2023) //tuple
+        
+    }
+    
+    func addition(n1 : Int, n2 : Int)->Int{
+        return n1 + n2;
+    }
+    
+    func closures(){
+        var additionClosure1 : (Int, Int)-> Int = {
+            (x,y) in
+            return x + y
+        }
+        
+        var addClosure = {
+            (x : Int,y : Int)-> Int in
+            x + y
+        }
+        
+        var square = {(number : Int) in number * number}
+        let res1 =  additionClosure1(12,12)
+        let res2 = addClosure(13,10)
+        
+        print(res1)
+        print(res2)
+        let result = square(10)
+        print(result)
     }
     
     func basics(){
